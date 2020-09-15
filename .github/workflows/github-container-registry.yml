@@ -17,10 +17,10 @@ jobs:
       uses: docker/login-action@master
       with:
         registry: ghcr.io
-        username: ArduinoBot
+        username: ${{ github.repository_owner	}}
         password: ${{ secrets.CR_PAT }}
 
     - name: Publish
       run: |
-        docker tag go-docker-mqtt-ubuntu-env ghcr.io/arduino/go-docker-mqtt-ubuntu-env:latest
-        docker push ghcr.io/arduino/go-docker-mqtt-ubuntu-env
+        docker tag go-docker-mqtt-ubuntu-env ghcr.io/guerinoni/go-docker-mqtt-ubuntu-env:latest
+        docker push ghcr.io/guerinoni/go-docker-mqtt-ubuntu-env
